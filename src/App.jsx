@@ -6,32 +6,58 @@ import Counter from './Counter'
 import User from './User'
 
 function App() {
-	let user1 = {
-		name: "Osman Mahmud",
-		Age: 26,
-		Email: "antormahmud318@gmail.com"
-	}
 
-	// let userObj2 = {
-	// 	name: "Siyam Hasan",
-	// 	Age: 27,
-	// 	Email: "siyam20@gmail.com"
-	// }
+	const usernames = ['antor','siyam','abir','imon','neon'];
 
-	// let userObj3 = {
-	// 	name: "Abir Khan",
-	// 	Age: 28,
-	// 	Email: "abirkhan@gmail.com"
-	// }
+	const userData = [
+		{
+			id: 29,
+			name: "Osman Mahmud",
+			Age: 26,
+			Email: "antormahmud318@gmail.com"
+		},
+		{
+			id: 20,
+			name: "Siyam Hasan",
+			Age: 27,
+			Email: "siyam20@gmail.com"
+		},
+		{
+			id: 19,
+			name: "Abir Khan",
+			Age: 28,
+			Email: "abirkhan@gmail.com"
+		}
+	]
 
 
   return (
     <>
       <div>
-        <h1>State in React</h1>
-		<User user={user1} />
-		
-		<Counter />
+        <h1>Map in JSX using Map Function</h1>
+		<table border="1">
+			<thead>
+				<tr>
+					<td>Id</td>
+					<td>Name</td>
+					<td>Age</td>
+					<td>Email</td>
+				</tr>
+			</thead>
+
+			<tbody>
+				{
+					userData.map((user)=>(
+						<tr>
+							<td>{user.id}</td>
+							<td>{user.name}</td>
+							<td>{user.Age}</td>
+							<td>{user.Email}</td>
+						</tr>
+					))
+				}
+			</tbody>
+		</table>
       </div>
     </>
   )
