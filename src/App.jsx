@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { use, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -34,7 +34,7 @@ function App() {
   return (
     <>
       <div>
-        <h1>Map in JSX using Map Function</h1>
+        <h1>Loop in JSX using Map Function</h1>
 		<table border="1">
 			<thead>
 				<tr>
@@ -59,6 +59,18 @@ function App() {
 			</tbody>
 		</table>
       </div>
+
+
+	  <div>
+		<h1>Reuse Component in Loop</h1>
+		{
+			userData.map((user)=>(
+				<div key={user.id}>
+					<User data={user} />
+				</div>
+			))
+		}
+	  </div>
     </>
   )
 }
